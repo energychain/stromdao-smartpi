@@ -1,2 +1,5 @@
+
 */15 *    * * * root /opt/stromdao-smartpi/do.sh
 00 17     * * * root /opt/stromdao-smartpi/update.sh
+
+
