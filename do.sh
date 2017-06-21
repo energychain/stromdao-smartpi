@@ -2,4 +2,4 @@
 
 cd /opt/stromdao-smartpi
 
-node index.js
+/usr/local/bin/node index.js
