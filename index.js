@@ -10,10 +10,12 @@ var node_in = new StromDAONodeConsumer.Node({external_id:external_id_in,testMode
 
 node_in.mpr().then( function(mpr) {
     mpr.storeReading(my_reading_in).then( function(tx_result) {	
-     console.log(external_id,node.wallet.address,my_reading,tx_result);
+     console.log(external_id_in,node_in.wallet.address,my_reading_in,tx_result);
+    doOut();
     });
 });
 
+function doOut() {
 var external_id_out="SmartPI - Producer";
 
 var my_reading_out=Math.round(fs.readFileSync("/var/smartpi/producecounter").toString()*1000);
@@ -23,7 +25,8 @@ var node_out = new StromDAONodeProducer.Node({external_id:external_id_out,testMo
 
 node_out.mpr().then( function(mpr) {
     mpr.storeReading(my_reading_out).then( function(tx_result) {
-     console.log(external_id,node.wallet.address,my_reading,tx_result);
+     console.log(external_id_out,node_out.wallet.address,my_reading_out,tx_result);
     });
 });
+}
 

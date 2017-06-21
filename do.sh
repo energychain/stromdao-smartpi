@@ -1,4 +1,5 @@
 #!/bin/sh
 
-cd /opt/stromdao
+cd /opt/stromdao-smartpi
+
 node index.js
