@@ -2,5 +2,5 @@
 
 cd /opt/stromdao-smartpi/
 git pull
-npm install stromdao-businessobject
+npm install -g stromdao-bo-mpo
 

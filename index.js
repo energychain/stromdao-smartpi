@@ -1,20 +1,16 @@
+
 var fs = require("fs");
 var StromDAONodeConsumer = require("stromdao-businessobject");
 var StromDAONodeProducer = require("stromdao-businessobject");
 var external_id_in="SmartPI - Consumer";
 
 var my_reading_in=Math.round(fs.readFileSync("/var/smartpi/consumecounter").toString()*1000);
-console.log(my_reading_in);
+var cli = require("stromdao-bo-mpo");
 
-var node_in = new StromDAONodeConsumer.Node({external_id:external_id_in,testMode:true});    
+console.log(cli);
 
-node_in.mpr().then( function(mpr) {
-    mpr.storeReading(my_reading_in).then( function(tx_result) {	
-     console.log(external_id_in,node_in.wallet.address,my_reading_in,tx_result);
-    doOut();
-    });
-});
 
+/*
 function doOut() {
 var external_id_out="SmartPI - Producer";
 
@@ -29,4 +25,5 @@ node_out.mpr().then( function(mpr) {
     });
 });
 }
+*/
 
