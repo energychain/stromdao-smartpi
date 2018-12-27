@@ -1,0 +1,22 @@
+{
+  "name": "stromdao-smartpi",
+  "version": "1.0.0",
+  "description": "SmartPI Energy Meter as StromDAO Energy Blockchain datasource",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energychain/stromdao-smartpi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/energychain/stromdao-smartpi/issues"
+  },
+  "homepage": "https://github.com/energychain/stromdao-smartpi#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

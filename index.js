@@ -1,15 +1,16 @@
-
 var fs = require("fs");
-var StromDAONodeConsumer = require("stromdao-businessobject");
-var StromDAONodeProducer = require("stromdao-businessobject");
+const http_request=require("request");
 var external_id_in="SmartPI - Consumer";
 
 var my_reading_in=Math.round(fs.readFileSync("/var/smartpi/consumecounter").toString()*1000);
-var cli = require("stromdao-bo-mpo");
+var my_reading_out=Math.round(fs.readFileSync("/var/smartpi/prosumercounter").toString()*1000);
 
-console.log(cli);
-
-
+http_request("https://api.corrently.io/core/iot?account=0xF0d4282c189C8c40C80dcCcACB9F6d69f46E1B7e&secret=smartpi&value="+my_reading_in,function(r,e,b) {
+  console.log(b);
+});
+http_request("https://api.corrently.io/core/iot?account=0x21a9040D67D60a11BD3F4843e85bBCC10Fa52Dd9&secret=smartpi&value="+my_reading_in,function(r,e,b) {
+  console.log(b);
+});
 /*
 function doOut() {
 var external_id_out="SmartPI - Producer";
@@ -26,4 +27,3 @@ node_out.mpr().then( function(mpr) {
 });
 }
 */
-
